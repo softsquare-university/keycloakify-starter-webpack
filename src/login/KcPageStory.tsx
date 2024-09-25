@@ -16,7 +16,15 @@ const kcContextExtensionPerPage: KcContextExtensionPerPage = {};
 export const { getKcContextMock } = createGetKcContextMock({
     kcContextExtension,
     kcContextExtensionPerPage,
-    overrides: {},
+    overrides: {
+        locale: {
+            currentLanguageTag: "th",
+          },
+       realm:{
+        displayName:"softsquare university",
+        displayNameHtml:"softsquare university"
+       }
+    },
     overridesPerPage: {}
 });
 

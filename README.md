@@ -6,14 +6,6 @@
 
 This starter is based on Webpack. There is also [a Vite based starter](https://github.com/keycloakify/keycloakify-starter).
 
-# Quick start
-
-```bash
-git clone https://github.com/keycloakify/keycloakify-starter-webpack
-cd keycloakify-starter-webpack
-yarn install # Or use pnpm or bun (but not npm), just be sure to delete the yarn.lock if you do.
-```
-
 # Testing the theme locally
 
 [Documentation](https://docs.keycloakify.dev/v/v10/testing-your-theme)
