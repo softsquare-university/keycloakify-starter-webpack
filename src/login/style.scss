@@ -1,0 +1,113 @@
+@import url(./assets/fonts/prompt.css);
+:root {
+    --pf-global--primary-color--100: rgb(37, 177, 187);
+    --pf-global--primary-color--200: rgb(26, 142, 146);
+    --pf-global--BorderRadius--sm: 5px;
+    --pf-global--BorderRadius--lg: 5px;
+    --pf-global--FontSize--md: 14px;
+    --pf-global--BorderColor--300: #ced4da;
+    --pf-global--BorderColor--200: #ced4da;
+    --pf-global--BorderWidth--md: 1px;
+}
+.pf-c-form {
+    --pf-c-form--GridGap:0;
+    --pf-c-form__label--m-disabled--Color: #868e96;
+    --pf-c-form__label-text--FontWeight:400;
+}
+.pf-c-form-control {
+    --pf-c-form-control--placeholder--Color:rgb(139, 142, 143);
+    --pf-c-form-control--Height: calc(1.5em + 0.75rem + 2px);
+    --pf-c-form-control--BorderRadius: 4px;
+    --pf-c-form-control--hover--BorderBottomColor: var(--pf-global--BorderColor--300);
+    --pf-c-form-control--focus--BorderBottomColor: var(--pf-global--BorderColor--300);
+    outline: none;
+    font-size: 16px;
+    transition:
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+.pf-c-form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 154, 207, 0.25);
+    border-color: #50d2ff;
+}
+.pf-c-button {
+    transition: background 0.3s ease-in;
+}
+
+body {
+    font-family: "Prompt";
+    font-size: 14px;
+}
+.login-pf body {
+    background: url("./assets/img/softsquare-building.png") no-repeat top left fixed;
+    background-size: cover;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.54);
+        z-index: -1;
+    }
+}
+#kc-header-wrapper {
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: normal;
+    @media (max-width: 767px) {
+        padding: 0;
+        color: #ededed;
+    }
+}
+@media (max-width: 767px) {
+    #kc-header {
+        text-align: center;
+    }
+}
+.card-pf {
+    max-width:400px;
+    border-radius: 6px;
+    border-top: 0px;
+}
+.login-pf-page .card-pf {
+    @media (max-width: 767px) {
+        max-width:400px;
+        padding-top: 10px;
+        margin-left: auto;
+        margin-right:auto;
+    }
+    @media (min-width: 768px) {
+        padding: 10px 20px 30px 20px;
+    }
+}
+.logo-container {
+    img {
+        width: 120px;
+        margin: auto;
+        display: block;
+    }
+}
+.website {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    color: #445661;
+    line-height: 1;
+    margin-top: 10px;
+}
+.website-description {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #8b959a;
+    line-height: 1;
+}
+#kc-info {
+    margin: 20px -20px -20px;
+    #kc-info-wrapper {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}

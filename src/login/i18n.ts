@@ -7,6 +7,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
     .withCustomTranslations({
         th: {
             username: "Username",   
+            usernameOrEmail:"Username",
             password:"Password",
             usernamePlaceholder: "ชื่อผู้ใช้",
             passwordPlaceholder:"รหัสผ่าน"

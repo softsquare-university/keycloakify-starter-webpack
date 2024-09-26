@@ -78,8 +78,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             <div className="logo-container">
                <img src={logoUrl} width={100}/>
             </div>
-            <div className="title">CREDIT BANK</div>
-            <div className="secondary-description">ระบบคลังหน่วยกิต</div>
+            <div className="website">CREDIT BANK</div>
+            <div className="website-description">ระบบคลังหน่วยกิต</div>
             <div id="kc-form">
                 <div id="kc-form-wrapper">
                     {realm.password && (
@@ -91,6 +91,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                             }}
                             action={url.loginAction}
                             method="post"
+                            className="pf-c-form"
                         >
                             {!usernameHidden && (
                                 <div className={kcClsx("kcFormGroupClass")}>
@@ -227,7 +228,7 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
                 aria-controls={passwordInputId}
                 onClick={toggleIsPasswordRevealed}
             >
-                <i className={kcClsx(isPasswordRevealed ? "kcFormPasswordVisibilityIconHide" : "kcFormPasswordVisibilityIconShow")} aria-hidden />
+                <i className={kcClsx(isPasswordRevealed ? "kcFormPasswordVisibilityIconShow" : "kcFormPasswordVisibilityIconHide")} aria-hidden />
             </button>
         </div>
     );

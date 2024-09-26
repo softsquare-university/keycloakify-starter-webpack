@@ -16,7 +16,7 @@ export const Default: Story = {
     render: () => (
         <KcPageStory
             kcContext={{
-                realm: { registrationAllowed: false,rememberMe:false,loginWithEmailAllowed:false }
+                realm: { registrationAllowed: false,rememberMe:false}
             }}
         />
     )

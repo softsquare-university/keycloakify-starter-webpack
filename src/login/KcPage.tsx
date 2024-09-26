@@ -1,4 +1,4 @@
-import "./main.css"
+import "./style.scss"
 import { Suspense, lazy } from "react";
 import type { ClassKey } from "keycloakify/login";
 import type { KcContext } from "./KcContext";
