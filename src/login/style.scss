@@ -32,16 +32,17 @@
     border-color: #50d2ff;
 }
 .pf-c-button {
-    transition: background 0.3s ease-in;
+    transition: background 0.2s ease-in;
+    --pf-c-button--disabled--Color:var(--pf-c-button--m-primary--Color);
+    --pf-c-button--disabled--BackgroundColor:#88d9df;
+    
 }
 
 body {
     font-family: "Prompt";
     font-size: 14px;
 }
-a {
-    outline: none;
-}
+
 .login-pf body {
     background: url("./assets/img/softsquare-building.jpg") no-repeat top left fixed;
     background-size: cover;
@@ -55,6 +56,9 @@ a {
         background: rgba(0, 0, 0, 0.54);
         z-index: -1;
     }
+}
+a:focus{
+    outline:none;
 }
 #kc-header-wrapper {
     font-size: 40px;
@@ -107,6 +111,9 @@ a {
     font-weight: 500;
     color: #8b959a;
     line-height: 1;
+}
+#kc-content-wrapper{
+    margin-top:0px;
 }
 .pf-c-input-group {
     --pf-c-input-group--child--ZIndex: 0;

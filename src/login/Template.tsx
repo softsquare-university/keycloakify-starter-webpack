@@ -59,7 +59,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 </div>
             </div>
             <div className={kcClsx("kcFormCardClass")}>
-                {kcContext.pageId != "login.ftl" && (
+              
                     <header className={kcClsx("kcFormHeaderClass")}>
                                     {(() => {
                                         const node = !(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
@@ -93,7 +93,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                         return node;
                                     })()}
                     </header>
-                )}
+             
                 <div id="kc-content">
                     <div id="kc-content-wrapper">
                         {/* App-initiated actions should not see warning messages about the need to complete the action during login. */}
