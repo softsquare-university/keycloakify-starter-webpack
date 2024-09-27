@@ -19,6 +19,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     const classes = {
         kcLabelClass: "pf-c-form__label pf-c-form__label-text pf-m-disabled",
+        kcButtonLargeClass:""
       } satisfies { [key in ClassKey]?: string };
     return (
         <Suspense>

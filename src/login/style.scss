@@ -1,4 +1,5 @@
 @import url(./assets/fonts/prompt.css);
+@import url(./assets/fonts/icon.css);
 :root {
     --pf-global--primary-color--100: rgb(37, 177, 187);
     --pf-global--primary-color--200: rgb(26, 142, 146);
@@ -10,12 +11,12 @@
     --pf-global--BorderWidth--md: 1px;
 }
 .pf-c-form {
-    --pf-c-form--GridGap:0;
+    --pf-c-form--GridGap: 0;
     --pf-c-form__label--m-disabled--Color: #868e96;
-    --pf-c-form__label-text--FontWeight:400;
+    --pf-c-form__label-text--FontWeight: 400;
 }
 .pf-c-form-control {
-    --pf-c-form-control--placeholder--Color:rgb(139, 142, 143);
+    --pf-c-form-control--placeholder--Color: rgb(139, 142, 143);
     --pf-c-form-control--Height: calc(1.5em + 0.75rem + 2px);
     --pf-c-form-control--BorderRadius: 4px;
     --pf-c-form-control--hover--BorderBottomColor: var(--pf-global--BorderColor--300);
@@ -38,8 +39,11 @@ body {
     font-family: "Prompt";
     font-size: 14px;
 }
+a {
+    outline: none;
+}
 .login-pf body {
-    background: url("./assets/img/softsquare-building.png") no-repeat top left fixed;
+    background: url("./assets/img/softsquare-building.jpg") no-repeat top left fixed;
     background-size: cover;
     &::before {
         content: "";
@@ -67,16 +71,16 @@ body {
     }
 }
 .card-pf {
-    max-width:400px;
+    max-width: 400px;
     border-radius: 6px;
     border-top: 0px;
 }
 .login-pf-page .card-pf {
     @media (max-width: 767px) {
-        max-width:400px;
+        max-width: 400px;
         padding-top: 10px;
         margin-left: auto;
-        margin-right:auto;
+        margin-right: auto;
     }
     @media (min-width: 768px) {
         padding: 10px 20px 30px 20px;
@@ -104,8 +108,63 @@ body {
     color: #8b959a;
     line-height: 1;
 }
+.pf-c-input-group {
+    --pf-c-input-group--child--ZIndex: 0;
+}
+.pf-c-input-group.has-icon {
+    position: relative;
+    .prefix-icon {
+        position: absolute;
+        top: 7px;
+        left: 10px;
+        z-index: 1;
+
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 23px; /* Preferred icon size */
+        line-height: 1;
+        display: inline-block;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        color: #b9d5d7;
+    }
+    input.pf-c-form-control {
+        padding-left: 45px;
+        &#password[aria-invalid="true"] {
+            background-position-x: calc(100% - 40px);
+            background-position-y: 50%;
+        }
+    }
+    .eye {
+        position: absolute;
+        background: none;
+        border: 0px;
+        top: 0;
+        right: 0;
+        width: 38px;
+        height: 38px;
+        .eye-icon {
+            font-family: "Material Symbols Outlined";
+            font-weight: bold;
+            font-style: normal;
+            font-size: 20px; /* Preferred icon size */
+            display: inline-block;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            color: #25b1bb;
+        }
+    }
+}
+
 #kc-info {
-    margin: 20px -20px -20px;
+    margin: 20px -20px -30px;
     #kc-info-wrapper {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
