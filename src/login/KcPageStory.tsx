@@ -19,9 +19,9 @@ export const { getKcContextMock } = createGetKcContextMock({
     overrides: {
         locale: {
             currentLanguageTag: "th",
-          },
+        },
        realm:{
-        displayName:"softsquare university",
+        displayName:"credit bank",
         displayNameHtml:"softsquare university"
        }
     },

@@ -10,7 +10,10 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             usernameOrEmail:"Username",
             password:"Password",
             usernamePlaceholder: "ชื่อผู้ใช้",
-            passwordPlaceholder:"รหัสผ่าน"
+            passwordPlaceholder:"รหัสผ่าน",
+            updatePasswordTitle:"เปลี่ยนรหัสผ่าน",
+            backToApplication:"กลับไปที่การเข้าสู่ระบบ",
+            displayNameSecondary:"ระบบคลังหน่วยกิต",
         }
     })
     .build();

@@ -98,6 +98,7 @@ a:focus{
     }
 }
 .website {
+    text-transform: uppercase;
     text-align: center;
     font-size: 26px;
     font-weight: 500;
@@ -141,9 +142,9 @@ a:focus{
     }
     input.pf-c-form-control {
         padding-left: 45px;
-        &#password[aria-invalid="true"] {
+        &[id^="password"][aria-invalid="true"] {
             background-position-x: calc(100% - 40px);
-            background-position-y: 50%;
+            background-position-y: 50%; 
         }
     }
     .eye {
