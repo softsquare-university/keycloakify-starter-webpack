@@ -13,7 +13,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             passwordPlaceholder:"รหัสผ่าน",
             updatePasswordTitle:"เปลี่ยนรหัสผ่าน",
             backToApplication:"กลับไปที่การเข้าสู่ระบบ",
-            displayNameSecondary:"ระบบคลังหน่วยกิต",
+            doSubmit:"ดำเนินการต่อ"
         }
     })
     .build();

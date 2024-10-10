@@ -21,6 +21,7 @@ export const { getKcContextMock } = createGetKcContextMock({
             currentLanguageTag: "th",
         },
        realm:{
+        name:"cb",
         displayName:"credit bank",
         displayNameHtml:"softsquare university"
        }

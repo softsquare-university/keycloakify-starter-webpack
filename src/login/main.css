@@ -32,11 +32,11 @@ body {
   font-family: 'Prompt';
 }
 body.kcBodyClass{
-  background: url("./assets/img/softsquare-building.png") no-repeat top left fixed;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url("./assets/img/softsquare-building.png") no-repeat top left fixed;
   background-size:cover;
   font-size:14px;
 }
-body.kcBodyClass::before {
+/* body.kcBodyClass::before {
   content: '';
   position: absolute;
   top: 0;
@@ -45,7 +45,7 @@ body.kcBodyClass::before {
   height: 100%;
   background: rgba(0, 0, 0, 0.54);
   z-index:-1;
-}
+} */
 #kc-header-wrapper{
   font-size:40px;
   font-weight: 500;

@@ -1,6 +1,7 @@
 import { useEffect, useReducer } from "react";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import { assert } from "keycloakify/tools/assert";
+import { clsx } from "keycloakify/tools/clsx";
 import { getKcClsx, type KcClsx } from "keycloakify/login/lib/kcClsx";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
@@ -116,6 +117,25 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
                         )}
                     </div>
                 </div>
+
+                <div className="alert-info pf-c-alert pf-m-inline pf-m-info">
+                    <div className="pf-c-alert__icon">
+                        <i className={kcClsx("kcFeedbackInfoIcon")}></i>
+                    </div>
+                    <span
+                        className={kcClsx("kcAlertTitleClass")}
+                        dangerouslySetInnerHTML={{
+                            __html: kcSanitize("Password Policy:")
+                        }}
+                    />
+                    <div className="pf-c-alert__description">
+                        <ul className="pf-c-list">
+                            <li>ต้องมีอักขระพิเศษอย่างน้อย 1 อักษร</li>
+                            <li>ต้องมีตัวอักษรพิมพ์ใหญ่อย่างน้อย 2 อักษร</li>
+                        </ul>
+                    </div>
+                </div>
+
             </form>
         </Template>
     );
@@ -157,7 +177,7 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
 
     return (
         <div className="pf-c-input-group has-icon">
-             <span className="prefix-icon">key</span>
+            <span className="prefix-icon">key</span>
             {children}
             <button
                 type="button"
@@ -166,7 +186,7 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
                 aria-controls={passwordInputId}
                 onClick={toggleIsPasswordRevealed}
             >
-               {isPasswordRevealed ? (
+                {isPasswordRevealed ? (
                     <span className="eye-icon">visibility</span>
                 ) : (
                     <span className="eye-icon">visibility_off</span>
