@@ -18,7 +18,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
 
     const { social, realm, url, usernameHidden, login, auth, registrationDisabled, messagesPerField } = kcContext;
 
-    const { msg, msgStr,advancedMsg } = i18n;
+    const { msg, msgStr } = i18n;
 
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 
@@ -34,8 +34,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                     <div className="logo-container">
                         <img src={logoUrl} width={100} />
                     </div>
-                    <div className="website">{realm.displayName}</div>
-                    <div className="website-description">{advancedMsg("displayNameSecondary")}</div>
+                    {msg("displayName",realm.displayName)}
                 </div>
             }
             displayInfo={realm.password && realm.registrationAllowed && !registrationDisabled}
@@ -190,7 +189,6 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     )}
                                 </div>
                             </div>
-
                             <div id="kc-form-buttons" className={kcClsx("kcFormGroupClass")}>
                                 <input type="hidden" id="id-hidden-input" name="credentialId" value={auth.selectedCredential} />
                                 <input
