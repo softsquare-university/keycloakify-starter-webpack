@@ -22,8 +22,9 @@ export const { getKcContextMock } = createGetKcContextMock({
         },
        realm:{
         name:"cb",
-        displayName:"credit bank",
-        displayNameHtml:"softsquare university"
+        displayName:"Softsquare University",
+        displayNameHtml:"<div class=\"website\">credit bank</div><div class=\"website-description\">ระบบคลังหน่วยกิต</div>",
+        internationalizationEnabled:true
        }
     },
     overridesPerPage: {}

@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import { assert } from "keycloakify/tools/assert";
 import { clsx } from "keycloakify/tools/clsx";
@@ -128,12 +128,13 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
                             __html: kcSanitize("Password Policy:")
                         }}
                     />
-                    <div className="pf-c-alert__description">
+                    <PasswordPolicy kcContext={kcContext} kcClsx={kcClsx} i18n={i18n} />
+                    {/* <div className="pf-c-alert__description">
                         <ul className="pf-c-list">
                             <li>ต้องมีอักขระพิเศษอย่างน้อย 1 อักษร</li>
                             <li>ต้องมีตัวอักษรพิมพ์ใหญ่อย่างน้อย 2 อักษร</li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
 
             </form>
@@ -159,6 +160,44 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
         </div>
     );
 }
+
+// https://reactnative.dev/docs/network
+function PasswordPolicy(props: { kcContext:KcContext, kcClsx: KcClsx; i18n: I18n; }) {
+    const { realm,locale } = props.kcContext;
+    const [data, setData] = useState<any[]>([]);
+    // const policy = new Promise<string>((resolve, reject) => { 
+    //         resolve(JSON.stringify(['a', 'b', 'c']) as string)
+    // });
+    const getPolicies = async () => {
+        try {
+           const response = await fetch(`https://idp.university.softsquaregroup.app/realms/${realm.name}/information/password-policy/${locale?.currentLanguageTag}`)
+          // const response = await policy;
+           const json = await response.json();
+            console.log(json);
+            setData(json);
+        } catch (error) {
+            console.error(error);
+        } finally {
+
+        }
+    };
+    useEffect(() => {
+        getPolicies();
+    }, []);
+
+    return (
+        <div className="pf-c-alert__description">
+            <ul className="pf-c-list">
+                {data.map((prop) => {
+                    return (
+                        <li>{prop}</li>
+                    );
+                })}
+            </ul>
+        </div>
+    );
+}
+
 
 function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: string; children: JSX.Element }) {
     const { kcClsx, i18n, passwordInputId, children } = props;

@@ -34,7 +34,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                     <div className="logo-container">
                         <img src={logoUrl} width={100} />
                     </div>
-                    {msg("displayName",realm.displayName)}
+                    {msg("displayName",realm.displayNameHtml)}
                 </div>
             }
             displayInfo={realm.password && realm.registrationAllowed && !registrationDisabled}
